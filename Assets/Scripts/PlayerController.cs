@@ -26,14 +26,20 @@ public class PlayerController : MonoBehaviour
         //moveInput.z = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
 
         Vector3 vertMove = transform.forward * Input.GetAxis("Vertical");
+        //Moving While turning
+        Vector3 horiMove = transform.right * Input.GetAxis("Horizontal");
 
-        moveInput = vertMove * Time.deltaTime;
+        moveInput = horiMove + vertMove;
+        moveInput = moveInput * moveSpeed;
+        moveInput.Normalize();
 
 
+        //moveInput = vertMove * Time.deltaTime;
 
-        charCon.Move(moveInput);
 
-        charCon.Move(moveInput);
+        charCon.Move(moveInput * Time.deltaTime);
+
+       
 
         //control camera rotation
         Vector2 mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * mouseSensitivity;

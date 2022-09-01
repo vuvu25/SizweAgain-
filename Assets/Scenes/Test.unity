@@ -419,11 +419,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfb4d6c42948f54b87118e334aa098b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 15
   charCon: {fileID: 585093725}
   camTrans: {fileID: 129476692}
   mouseSensitivity: 1
-  invertX: 0
+  invertX: 1
   invertY: 0
 --- !u!143 &585093725
 CharacterController:
